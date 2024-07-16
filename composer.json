@@ -5,11 +5,9 @@
   "type": "magento2-module",
   "require": {
     "magento/framework": "*",
-    "maddlen/zermatt": "1.0.*"
+    "maddlen/module-zermatt": "1.0.*"
   },
-  "license": [
-    "Massachusetts Institute of Technology License (MITL)"
-  ],
+  "license": "MIT",
   "autoload": {
     "files": [
       "registration.php"
