@@ -6,11 +6,11 @@
 namespace Maddlen\ZermattExamples\Controller\Form;
 
 use Maddlen\ZermattForm\FormRules\FormRulesAbstract;
-use Maddlen\ZermattForm\FormRules\FormRulesActionInterface;
+use Magento\Framework\Phrase;
 use Magento\Framework\Validator\EmailAddress;
 use Magento\Framework\Validator\NotEmpty;
 
-class Index extends FormRulesAbstract implements FormRulesActionInterface
+class Index extends FormRulesAbstract
 {
     public function rules(): array
     {
@@ -23,5 +23,10 @@ class Index extends FormRulesAbstract implements FormRulesActionInterface
     public function redirectUrl(): string
     {
         return $this->url->getUrl('zermatt_examples');
+    }
+
+    public function getSuccessMessage(): ?Phrase
+    {
+        return __('Form is valid');
     }
 }
