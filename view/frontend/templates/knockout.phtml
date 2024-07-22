@@ -1,9 +1,11 @@
 <?php
 /**
  * @author Hervé Guétin <www.linkedin.com/in/herveguetin>
- */ ?>
+ */
+
+use Magento\Framework\View\Element\Template; ?>
 <?php
-/** @var \Magento\Framework\View\Element\Template $block */
+/** @var Template $block */
 ?>
 
 <?php // The Alpine part ?>
@@ -11,7 +13,7 @@
 <h4>Alpine</h4>
 <div x-data="{}">
     <form action="#">
-        <input @input.debounce="$dispatch('zermatt_example:alpine_input', $event.target.value)" type="text">
+        <input @input.debounce="Zermatt.Event.dispatch('zermatt_example:alpine_input', {value: $event.target.value})" type="text">
     </form>
 </div>
 

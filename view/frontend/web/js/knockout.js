@@ -12,8 +12,8 @@ define(
         return Component.extend({
             message: ko.observable(''),
             initialize: function () {
-                document.addEventListener('zermatt_example:alpine_input', function (event) {
-                    this.message(event.detail)
+                Zermatt.Event.on('zermatt_example:alpine_input', function (event) {
+                    this.message(event.detail.value)
                 }.bind(this))
             }
         })
