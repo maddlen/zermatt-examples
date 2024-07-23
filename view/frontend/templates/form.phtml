@@ -10,19 +10,17 @@ use Magento\Framework\View\Element\Template; ?>
 <?php
 $nameField = 'name';
 $emailField = 'email';
+$textInputTemplate = 'Maddlen_ZermattExamples::partials/form/text.phtml';
+$buttonTemplate = 'Maddlen_ZermattExamples::partials/form/button.phtml';
 ?>
 <h2>Form</h2>
 <div x-data="Zermatt.Module('Zermatt_Form', {formData: {<?= $nameField ?>: '', <?= $emailField ?>: ''}})" x-cloak>
     <form action="<?= $block->getUrl('zermatt_examples/form') ?>">
         <template x-if="form">
             <div>
-                <?php zermatt_partial('Maddlen_ZermattExamples::partials/form/text.phtml', ['label' => __('Name'), 'id' => 'random_id', 'name' => $nameField]) ?>
-                <?php zermatt_partial('Maddlen_ZermattExamples::partials/form/error.phtml', ['target' => $nameField]) ?>
-
-                <?php zermatt_partial('Maddlen_ZermattExamples::partials/form/text.phtml', ['label' => __('Email'), 'id' => 'another_random_id', 'name' => $emailField]) ?>
-                <?php zermatt_partial('Maddlen_ZermattExamples::partials/form/error.phtml', ['target' => $emailField]) ?>
-
-                <?php zermatt_partial('Maddlen_ZermattExamples::partials/form/button.phtml', ['label' => __('Submit')]) ?>
+                <?php zermatt_partial($textInputTemplate, ['label' => __('Name'), 'id' => 'random_id', 'name' => $nameField, 'validate' => true]) ?>
+                <?php zermatt_partial($textInputTemplate, ['label' => __('Email'), 'id' => 'another_random_id', 'name' => $emailField, 'validate' => true]) ?>
+                <?php zermatt_partial($buttonTemplate, ['label' => __('Submit')]) ?>
             </div>
         </template>
     </form>

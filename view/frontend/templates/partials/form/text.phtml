@@ -5,10 +5,13 @@
 <?php
 /** @var \Magento\Framework\View\Element\Template $block */
 ?>
-<label for="name"><?= $block->getData('label') ?></label>
+<label for="<?= $block->getId() ?>"><?= $block->getLabel() ?></label>
 <input
-    id="<?= $block->getData('id') ?>"
-    name="<?= $block->getData('name') ?>"
-    x-model="form.<?= $block->getData('name') ?>"
-    @change="validate('<?= $block->getData('name') ?>')"
+    id="<?= $block->getId() ?>"
+    name="<?= $block->getName() ?>"
+    x-model="form.<?= $block->getName() ?>"
+    @change="validate('<?= $block->getName() ?>')"
 />
+<?php if ($block->getValidate()): ?>
+    <?php zermatt_partial('Maddlen_ZermattExamples::partials/form/error.phtml', ['field' => $block->getName()]) ?>
+<?php endif  ?>
