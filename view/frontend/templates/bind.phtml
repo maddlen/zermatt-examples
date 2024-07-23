@@ -8,22 +8,9 @@ use Magento\Framework\View\Element\Template; ?>
 /** @var Template $block */
 ?>
 <script>
-    document.addEventListener('zermatt:init', function () {
+    document.addEventListener('zermatt:ready', function () {
         Alpine.bind(document.querySelector('#search_mini_form'), () => ({
-            'x-data': () => {
-                return {
-                    query: '',
-                    init() {
-                        Alpine.bind(this.$el.querySelector('#search'), () => ({
-                            'x-model': 'query',
-                            '@input.debounce': () => this.onInputChange()
-                        }))
-                    },
-                    onInputChange() {
-                        console.log(this.query)
-                    }
-                }
-            }
+            'x-data': () => Zermatt.Module('ZermattExamples_Bind')
         }))
     })
 </script>

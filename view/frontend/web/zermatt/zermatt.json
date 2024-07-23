@@ -1,7 +1,8 @@
 {
   "modules": {
     "ZermattExamples_Welcome": "./modules/welcome",
-    "ZermattExamples_Translation": "./modules/translation"
+    "ZermattExamples_Translation": "./modules/translation",
+    "ZermattExamples_Bind": "./modules/bind"
   },
   "rewrites": {
     "ZermattExamples_Welcome": "./modules/welcome-rewrite"
