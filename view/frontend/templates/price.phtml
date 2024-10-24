@@ -12,11 +12,20 @@
     get finalPrice() {
         return this.price - this.discount
     },
-    formatPrice(price) {
-        return Zermatt.Money.formatPrice(price)
+    formatPrice(...args) {
+        return Zermatt.Money.formatPrice(...args)
     }
 }">
     <h2>Price</h2>
-    <div>Price was: <span x-text="formatPrice(price)"></span></div>
-    <div>Final price is: <span x-text="formatPrice(finalPrice)"></span></div>
+    <div>Price was:
+        <span x-text="formatPrice(price)"></span>
+    </div>
+    <div>Final price is:
+        ƒ<span x-text="formatPrice(finalPrice)"></span></div>
+    <div>Final price as Euros:
+        <span x-text="formatPrice(finalPrice, {currency: 'EUR'})"></span>
+    </div>
+    <div>Final price as Euros, formatted for France:
+        <span x-text="formatPrice(finalPrice, {locale: 'fr_FR', currency: 'EUR'})"></span>
+    </div>
 </div>
