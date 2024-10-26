@@ -10,6 +10,7 @@
             <block name="zermatt_examples.form" template="Maddlen_ZermattExamples::form.phtml"/>
             <block name="zermatt_examples.knockout" template="Maddlen_ZermattExamples::knockout.phtml"/>
             <block name="zermatt_examples.bind" template="Maddlen_ZermattExamples::bind.phtml"/>
+            <block name="zermatt_examples.event" template="Maddlen_ZermattExamples::events.phtml"/>
         </referenceContainer>
     </body>
 </page>
