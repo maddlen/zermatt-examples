@@ -1,6 +1,6 @@
 {
   "name": "maddlen/module-zermatt-examples",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Examples of Zermatt usage.",
   "type": "magento2-module",
   "require": {

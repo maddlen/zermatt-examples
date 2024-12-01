@@ -9,6 +9,7 @@ use Maddlen\ZermattForm\FormRules\FormRulesAbstract;
 use Magento\Framework\Phrase;
 use Magento\Framework\Validator\EmailAddress;
 use Magento\Framework\Validator\NotEmpty;
+use React\Promise\Promise;
 
 class Index extends FormRulesAbstract
 {
@@ -28,5 +29,15 @@ class Index extends FormRulesAbstract
     public function getSuccessMessage(): ?Phrase
     {
         return __('Form is valid');
+    }
+
+    public function submitForm(): bool
+    {
+        new Promise(function ($resolve, $reject) {
+            usleep(2000000); // Simulating some work
+            $resolve();
+        });
+
+        return true;
     }
 }
