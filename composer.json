@@ -1,11 +1,11 @@
 {
   "name": "maddlen/module-zermatt-examples",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Examples of Zermatt usage.",
   "type": "magento2-module",
   "require": {
     "magento/framework": "*",
-    "maddlen/module-zermatt": "1.0.*"
+    "maddlen/module-zermatt": "^1.0.0"
   },
   "license": "MIT",
   "autoload": {
